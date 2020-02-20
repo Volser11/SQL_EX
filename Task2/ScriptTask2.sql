@@ -21,5 +21,5 @@ select
 	dateadd(dd, num, dateadd(day,1-day(ym),ym)) as dates
 from cte
 where num <= datepart(dd,EOMONTH(ym))-1	
-) c
+)  c
 group by cast(YEAR(ym) as varchar)+'-'+case when Month(ym)<10 then '0'+cast(Month(ym) as varchar) else cast(Month(ym) as varchar) end
